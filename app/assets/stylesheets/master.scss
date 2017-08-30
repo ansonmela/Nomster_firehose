@@ -12,6 +12,9 @@
 	margin-top: 10px;
 	margin-bottom: 15px;
 	padding: 20px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,3 +40,17 @@ body {
 	font-weight: 600;
 	letter-spacing: -0.3px;
 }
+
+.paginate a.active {
+	background-color: #4CAF50;
+	color: white;
+
+}
+
+.paginate a:hover:not(.active) {background-color: #ddd;
+}
+
+.paginate a {
+	margin: 0 4px;
+}
+
