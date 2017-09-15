@@ -87,6 +87,23 @@ blockquote:before {
 }
 
 blockquote p {
-	display: inline;
+	display: inline-block;
+}
+
+
+.divider {
+	border-top: 3px double #8c8b8b;
+}
+
+.pic {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 45%;
+	width: 45%;
+	float:left;
+	overflow-y: hidden;
+	background-position: center;
+
 }
 

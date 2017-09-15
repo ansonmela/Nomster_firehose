@@ -1,4 +1,4 @@
-<div class="booyah-box">
+<div class="booyah-box col-10 offset-1">
 	<h1><%= @place.name %></h1>
 	<i><%= @place.address %></i>
 	<br /><br />
@@ -73,11 +73,11 @@
   </div>
 </div>
 
+	
+
+	
 
 
-	<h1 class="float-left">Comments</h1>
-
-<div class="">
 
 	<!-- Button trigger modal -->
 
@@ -119,18 +119,22 @@
    </div>
 </div>
 
-<!-- Shows Photos -->
-   <div class="col-6">
-   	<% @place.photos.each do |photo| %>
-   		<%= image_tag photo.picture, class: 'img-fluid' %>
-   		<%= photo.caption %>
-   	<% end %>
-   </div>
+<hr class="divider" />
 
 
-<div class="row">
+	
+
+
+
+<h1 class="float-left">Comments</h1>
+
+
+<div class="commentsstyle">
+
 <% @place.comments.each do |comment| %>
-	<div class="col-12 col-sm-6">
+
+
+	
 		<blockquote>
 			<% if comment.humanized_rating.present? %>
 				<b><%= comment.humanized_rating %></b> -
@@ -138,6 +142,8 @@
 			<%= comment.message %>
 			<small><%= comment.user.email %></small>
 		</blockquote>
-	</div>
-
 			<% end %>
+
+
+
+
