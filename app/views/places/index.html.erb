@@ -35,40 +35,45 @@
 </div>
 
 <% @places.each do |place| %>
-
-		<div class="booyah-box">
+  
+  <div class="booyah-box">
 			<h1><%= link_to place.name, place_path(place) %></h1>
 			<i><%= place.address %></i><br /><br />
 			<p><%= place.description %></p><br />
 
-		<div class="pic">
-			<% place.photos.each do |photo| %>
-				<% if photo.picture.present? %>
-				<%= image_tag photo.picture %>
-				<%= photo.caption %>
-				<% end %>
-			<% end %>
-		</div>
-
-
-
-			<% if place.user.present? %>
+      <% if place.user.present? %>
 				<small><%= place.user.email %></small>
 			<% end %>
 
+      <% if place.comments.present? %>
 
-			
-			<% if place.comments.present? %>
-			<blockquote>
-				<% if place.comments.last.humanized_rating.present? %>
+			 <blockquote>
+				  <% if place.comments.last.humanized_rating.present? %>
 						<b><%= place.comments.last.humanized_rating %></b> -
-				<% end %>
-				<%= place.comments.last.message %>
-				<small><%= place.comments.last.user.email %></small>
+				  <% end %>
+          <%= place.comments.last.message %>
+				    <small><%= place.comments.last.user.email %></small>
 				</blockquote>
-			<% end %>
-		</div>
-    <% end %>
+			   <% end %>
+
+
+<br />
+    <div class="pic">
+      <% place.photos.each do |photo| %>
+
+        <% if photo.picture.present? %>
+        <%= image_tag photo.picture %>
+
+      <div class="piccaption">
+        <%= photo.caption %>
+      </div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% end %>
 
 			<hr />
 
